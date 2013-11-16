@@ -6,4 +6,4 @@ Uses the excellent [hideShowPassword](https://github.com/cloudfour/hideShowPassw
 
 ## Plugin Directory
 
-The plugin is also hosted on the [WordPress Plugin Directory](http://wordpress.org/plugins/hideshowpassword/).
+The plugin is hosted on the [WordPress Plugin Directory](http://wordpress.org/plugins/hideshowpassword/).
