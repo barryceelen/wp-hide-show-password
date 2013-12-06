@@ -20,3 +20,11 @@ Fork me on [Github](https://github.com/barryceelen/wp-hide-show-password).
 
 1. Install hideShowPassword either via the WordPress.org plugin directory, or by uploading the files to your server
 1. Activate the plugin through the 'Plugins' menu in WordPress
+
+== Changelog ==
+
+= 1.0.1 =
+* Hide Internet Explorer 10 control for toggling password visibility
+
+= 1.0.0 =
+* Initial version
