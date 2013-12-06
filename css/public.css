@@ -45,3 +45,5 @@
 .hideShowPassword-toggle-hide:before {
 	content: '\f404';
 }
+
+::-ms-reveal { display: none !important; }
