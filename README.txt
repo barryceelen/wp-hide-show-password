@@ -25,7 +25,7 @@ Fork me on [Github](https://github.com/barryceelen/wp-hide-show-password).
 
 = 1.0.2 =
 
-* Update hideShowPassword.js to version 1.0.3
+* Update hideShowPassword.js to version 1.0.3, set touchSupport to true
 
 = 1.0.1 =
 
