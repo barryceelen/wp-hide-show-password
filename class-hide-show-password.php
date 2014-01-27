@@ -24,7 +24,7 @@ class Hide_Show_Password {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '1.0.1';
+	const VERSION = '1.0.2';
 
 	/**
 	 * Unique identifier.
@@ -64,7 +64,7 @@ class Hide_Show_Password {
 	}
 
 	/**
-	 * Initialize the plugin by setting localization and actions.
+	 * Initialize the plugin by adding actions.
 	 *
 	 * @since     1.0.0
 	 */

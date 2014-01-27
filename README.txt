@@ -1,7 +1,7 @@
 === hideShowPassword ===
 Contributors: barryceelen
 Requires at least: 3.5.1
-Tested up to: 3.7.1
+Tested up to: 3.8.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -23,8 +23,14 @@ Fork me on [Github](https://github.com/barryceelen/wp-hide-show-password).
 
 == Changelog ==
 
+= 1.0.2 =
+
+* Update hideShowPassword.js to version 1.0.3
+
 = 1.0.1 =
-* Hide Internet Explorer 10 control for toggling password visibility
+
+* Hide default Internet Explorer 10 control for toggling password visibility
 
 = 1.0.0 =
+
 * Initial version
