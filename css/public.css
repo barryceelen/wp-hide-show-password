@@ -22,6 +22,7 @@
 
 .hideShowPassword-toggle:before {
 	color: #21759b;
+	cursor: pointer;
 	display: inline-block;
 	font-size: 16px;
 	font-family: 'hideShowPasswordGenericons';

@@ -2,8 +2,9 @@
 	"use strict";
 	$(function () {
 		$('#user_pass').hideShowPassword({
-  		// Creates a wrapper and toggle element with minimal styles.
-  		innerToggle: true
+			// Creates a wrapper and toggle element with minimal styles.
+			innerToggle: true,
+			touchSupport: true
 		});
 	});
 }(jQuery));
