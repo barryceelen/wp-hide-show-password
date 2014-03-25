@@ -24,7 +24,7 @@ class Hide_Show_Password {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '1.0.2';
+	const VERSION = '1.0.3';
 
 	/**
 	 * Unique identifier.
@@ -99,18 +99,22 @@ class Hide_Show_Password {
 	 */
 	public function enqueue_scripts() {
 
+		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
 		wp_register_script(
 			'hide-show-password',
-			plugins_url( 'js/vendor/hideShowPassword.min.js', __FILE__ ),
+			plugins_url( 'js/vendor/hideShowPassword' . $suffix . '.js', __FILE__ ),
 			array( 'jquery' ),
-			self::VERSION
+			self::VERSION,
+			true
 		);
 
 		wp_enqueue_script(
 			$this->plugin_slug . '-login-script',
 			plugins_url( 'js/public.js', __FILE__ ),
 			array( 'jquery', 'hide-show-password' ),
-			self::VERSION
+			self::VERSION,
+			true
 		);
 	}
 }
