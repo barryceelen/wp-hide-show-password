@@ -1,14 +1,14 @@
 (function ($) {
 	"use strict";
 	$(function () {
-		var hasTouch = false;
+		var bool = false;
 		if ( ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch ) {
-			hasTouch = true;
+			bool = true;
 		}
-		$('#user_pass').hideShowPassword({
-			// Creates a wrapper and toggle element with minimal styles.
-			innerToggle: true,
-			touchSupport: hasTouch
+		$('#user_pass').hideShowPassword(false, true, {
+			toggle: {
+				touchSupport: bool
+			}
 		});
 	});
 }(jQuery));
