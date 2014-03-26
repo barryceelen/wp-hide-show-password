@@ -27,17 +27,6 @@ class Hide_Show_Password {
 	const VERSION = '1.0.3';
 
 	/**
-	 * Unique identifier.
-	 *
-	 * The variable name is used as the text domain when internationalizing strings of text.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @var      string
-	 */
-	protected $plugin_slug = 'hide-show-password';
-
-	/**
 	 * Instance of this class.
 	 *
 	 * @since    1.0.0
@@ -84,7 +73,7 @@ class Hide_Show_Password {
 	 */
 	public function enqueue_styles() {
 		wp_enqueue_style(
-			$this->plugin_slug .'-login-styles',
+			'hide-show-password-login-styles',
 			plugins_url( 'css/public.css', __FILE__ ),
 			array(),
 			self::VERSION
@@ -110,7 +99,7 @@ class Hide_Show_Password {
 		);
 
 		wp_enqueue_script(
-			$this->plugin_slug . '-login-script',
+			'hide-show-password-login-script',
 			plugins_url( 'js/public.js', __FILE__ ),
 			array( 'jquery', 'hide-show-password' ),
 			self::VERSION,
