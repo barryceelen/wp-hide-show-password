@@ -24,7 +24,7 @@ class Hide_Show_Password {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '1.0.3';
+	const VERSION = '1.0.4';
 
 	/**
 	 * Instance of this class.
