@@ -1,7 +1,7 @@
 === hideShowPassword ===
 Contributors: barryceelen
 Requires at least: 3.5.1
-Tested up to: 3.4
+Tested up to: 4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,6 +11,8 @@ Toggle password visibility on the WordPress login screen.
 == Description ==
 
 Lets you easily show or hide the contents of the password field on the WordPress login screen. Uses the excellent [hideShowPassword](https://github.com/cloudfour/hideShowPassword) jQuery plugin by the equally excellent [Cloud Four](http://cloudfour.com/).
+
+Suggested reading: ["a compendium of why and how to show passwords and what’s coming next"](http://www.lukew.com/ff/entry.asp?1941) by Luke Wroblewski.
 
 = Github =
 
