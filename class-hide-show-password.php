@@ -24,7 +24,7 @@ class Hide_Show_Password {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '1.0.4';
+	const VERSION = '1.0.5';
 
 	/**
 	 * Instance of this class.
@@ -59,6 +59,13 @@ class Hide_Show_Password {
 	 */
 	private function __construct() {
 
+		$defaults = array(
+			'inline-toggle' => 0, // 1 for inline, 0 for checkbox toggle.
+			'checkbox-label' => __( 'Show Password', 'hideshowpassword' ),
+		);
+
+		$this->options = apply_filters( 'hide-admin-icons-options', $defaults );
+
 		// Load login screen style sheet and JavaScript.
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -72,9 +79,12 @@ class Hide_Show_Password {
 	 *
 	 */
 	public function enqueue_styles() {
+
+		$prefix = $this->options['inline-toggle'] ? 'inline': 'checkbox';
+
 		wp_enqueue_style(
 			'hide-show-password-login-styles',
-			plugins_url( 'css/public.css', __FILE__ ),
+			plugins_url( "css/public-{$prefix}.css", __FILE__ ),
 			array(),
 			self::VERSION
 		);
@@ -104,6 +114,15 @@ class Hide_Show_Password {
 			array( 'jquery', 'hide-show-password' ),
 			self::VERSION,
 			true
+		);
+
+		wp_localize_script(
+			'hide-show-password-login-script',
+			'hideShowPasswordVars',
+			array(
+				'inlineToggle' => $this->options['inline-toggle'],
+				'checkboxLabel' => $this->options['checkbox-label']
+			)
 		);
 	}
 }
