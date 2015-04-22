@@ -95,7 +95,6 @@ class Hide_Show_Password {
 	 * Register and enqueue login screen style sheet.
 	 *
 	 * @since     1.0.0
-	 *
 	 */
 	public function enqueue_styles() {
 
@@ -113,7 +112,6 @@ class Hide_Show_Password {
 	 * Register and enqueue login screen JavaScript.
 	 *
 	 * @since     1.0.0
-	 *
 	 */
 	public function enqueue_scripts() {
 
