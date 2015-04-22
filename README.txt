@@ -20,6 +20,13 @@ Lets you easily show or hide the contents of the password field on the WordPress
 
 A settings section is added to the 'General Settings' page. You can select between toggling password visibility via an icon in the password field (default) or via a checkbox below the password field.
 
+= Translations =
+
+The default setting of toggling the password via an icon in the password field does not require translation. No text will be visible to the user. If you’d like to toggle the password via a checkbox, the following translations are included:
+
+- Dutch
+- German
+
 = Github =
 
 Fork me on [Github](https://github.com/barryceelen/wp-hide-show-password).
@@ -28,8 +35,14 @@ Fork me on [Github](https://github.com/barryceelen/wp-hide-show-password).
 
 1. Install hideShowPassword either via the [Plugins Add New Screen](http://codex.wordpress.org/Plugins_Add_New_Screen), or by uploading the files to your server
 1. Activate the plugin through the 'Plugins' menu in WordPress
+1. Optionally edit the plugin settings on the 'General Settings' page
 
 == Changelog ==
+
+= 2.0.0 =
+
+* Optionally toggle password visibility via a checkbox below the password field
+* Update hideShowPassword.js to version 2.0.4
 
 = 1.0.4 =
 
