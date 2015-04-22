@@ -61,12 +61,14 @@ class Hide_Show_Password {
 
 		$defaults = array(
 			'inner_toggle' => 1, // 1 for inner toggle, 0 for checkbox toggle.
-			'checkbox_label' => __( 'Show Password', 'hide-show-password' ),
 		);
 
 		$option = get_option( 'plugin_hide_show_password' );
 
 		$this->options = wp_parse_args( $option, $defaults );
+
+		// Load plugin text domain.
+		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
 		// Load login screen style sheet and JavaScript.
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_styles' ) );
@@ -78,6 +80,15 @@ class Hide_Show_Password {
 		// Add an action link pointing to the general options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( __FILE__ ) . 'hide-show-password.php' );
 		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
+	}
+
+	/**
+	 * Load the plugin text domain for translation.
+	 *
+	 * @since 1.0.4
+	 */
+	public function load_plugin_textdomain() {
+		load_plugin_textdomain( 'hide-show-password', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	/**
@@ -129,7 +140,7 @@ class Hide_Show_Password {
 			'hideShowPasswordVars',
 			array(
 				'innerToggle' => $this->options['inner_toggle'],
-				'checkboxLabel' => $this->options['checkbox_label']
+				'checkboxLabel' => __( 'Show Password', 'hide-show-password' )
 			)
 		);
 	}
@@ -148,7 +159,7 @@ class Hide_Show_Password {
 		);
 		add_settings_section(
 			$option_name,
-			__( 'Hide/show password on login page', 'hide-show-password' ),
+			__( 'Hide and show password', 'hide-show-password' ),
 			'__return_false',
 			'general'
 		);
@@ -180,8 +191,8 @@ class Hide_Show_Password {
 	 */
 	public function settings_radios() {
 		$r = array(
-			array( '1', __( 'Icon in password field', 'hide-admin-icons' ) ),
-			array( '0', __( 'Checkbox below login form.', 'hide-admin-icons' ) ),
+			array( '1', __( 'Icon inside password field', 'hide-show-password' ) ),
+			array( '0', __( 'Checkbox below password field', 'hide-show-password' ) ),
 		);
 		foreach ( $r as $v ) {
 			$html[] = sprintf( '<input name="plugin_hide_show_password[inner_toggle]" type="radio" value="%s" %s> <span>%s</span>', $v[0], checked( $v[0], $this->options['inner_toggle'], false ), $v[1] );
@@ -197,7 +208,7 @@ class Hide_Show_Password {
 	public function add_action_links( $links ) {
 		return array_merge(
 			array(
-				'settings' => '<a href="' . admin_url( 'options-general.php?#hide-show-password-settings' ) . '">' . __( 'Settings' ) . '</a>'
+				'settings' => '<a href="' . admin_url( 'options-general.php?#hide-show-password-settings' ) . '">' . __( 'Settings', 'hide-show-password' ) . '</a>'
 			),
 			$links
 		);

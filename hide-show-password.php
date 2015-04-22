@@ -13,7 +13,7 @@
  * Version:     1.0.4
  * Author:      Barry Ceelen
  * Author URI:  https://github.com/barryceelen
- * Text Domain: hideshowpassword
+ * Text Domain: hide-show-password
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path: /languages
@@ -25,4 +25,4 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 require_once( plugin_dir_path( __FILE__ ) . 'class-hide-show-password.php' );
-add_action( 'init', array( 'Hide_Show_Password', 'get_instance' ) );
+add_action( 'plugins_loaded', array( 'Hide_Show_Password', 'get_instance' ) );
