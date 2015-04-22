@@ -83,7 +83,7 @@ class Hide_Show_Password {
 		$prefix = $this->options['inner-toggle'] ? 'inner-toggle': 'checkbox-toggle';
 
 		wp_enqueue_style(
-			'hide-show-password-login-styles',
+			'hide-show-password-style',
 			plugins_url( "css/public-{$prefix}.css", __FILE__ ),
 			array(),
 			self::VERSION
@@ -109,7 +109,7 @@ class Hide_Show_Password {
 		);
 
 		wp_enqueue_script(
-			'hide-show-password-login-script',
+			'hide-show-password-script',
 			plugins_url( 'js/public.js', __FILE__ ),
 			array( 'jquery', 'hide-show-password' ),
 			self::VERSION,
@@ -117,7 +117,7 @@ class Hide_Show_Password {
 		);
 
 		wp_localize_script(
-			'hide-show-password-login-script',
+			'hide-show-password-script',
 			'hideShowPasswordVars',
 			array(
 				'innerToggle' => $this->options['inner-toggle'],
