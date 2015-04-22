@@ -60,7 +60,7 @@ class Hide_Show_Password {
 	private function __construct() {
 
 		$defaults = array(
-			'inline-toggle' => 0, // 1 for inline, 0 for checkbox toggle.
+			'inner-toggle' => 0, // 1 for inner toggle, 0 for checkbox toggle.
 			'checkbox-label' => __( 'Show Password', 'hideshowpassword' ),
 		);
 
@@ -80,7 +80,7 @@ class Hide_Show_Password {
 	 */
 	public function enqueue_styles() {
 
-		$prefix = $this->options['inline-toggle'] ? 'inline': 'checkbox';
+		$prefix = $this->options['inner-toggle'] ? 'inner-toggle': 'checkbox-toggle';
 
 		wp_enqueue_style(
 			'hide-show-password-login-styles',
@@ -120,7 +120,7 @@ class Hide_Show_Password {
 			'hide-show-password-login-script',
 			'hideShowPasswordVars',
 			array(
-				'inlineToggle' => $this->options['inline-toggle'],
+				'innerToggle' => $this->options['inner-toggle'],
 				'checkboxLabel' => $this->options['checkbox-label']
 			)
 		);
