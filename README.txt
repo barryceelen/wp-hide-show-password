@@ -46,7 +46,7 @@ Fork me on [Github](https://github.com/barryceelen/wp-hide-show-password).
 
 = 2.0.0 =
 
-* Optionally toggle password visibility via a checkbox below the password field
+* Adds the option of toggling password visibility via a checkbox below the password field
 * Update hideShowPassword.js to version 2.0.4
 
 = 1.0.4 =
