@@ -60,7 +60,7 @@ class Hide_Show_Password {
 	private function __construct() {
 
 		$defaults = array(
-			'inner-toggle' => 0, // 1 for inner toggle, 0 for checkbox toggle.
+			'inner-toggle' => 1, // 1 for inner toggle, 0 for checkbox toggle.
 			'checkbox-label' => __( 'Show Password', 'hideshowpassword' ),
 		);
 
