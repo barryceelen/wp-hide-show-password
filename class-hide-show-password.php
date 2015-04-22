@@ -24,7 +24,7 @@ class Hide_Show_Password {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '1.0.5';
+	const VERSION = '1.0.4';
 
 	/**
 	 * Instance of this class.
@@ -137,7 +137,7 @@ class Hide_Show_Password {
 	/**
 	 * Add a settings section to the 'General Settings' page.
 	 *
-	 * @since    1.0.5
+	 * @since    1.0.4
 	 */
 	public function register_settings() {
 		$option_name = 'plugin_hide_show_password';
@@ -164,7 +164,7 @@ class Hide_Show_Password {
 	/**
 	 * Validate settings on save.
 	 *
-	 * @since    1.0.5
+	 * @since    1.0.4
 	 */
 	public function settings_validate( $input ) {
 		$input['inner_toggle'] = ( 0 == $input['inner_toggle'] ) ? 0 : 1;
@@ -174,7 +174,7 @@ class Hide_Show_Password {
 	/**
 	 * Display radio buttons for the 'inner_toggle' option.
 	 *
-	 * @since    1.0.5
+	 * @since    1.0.4
 	 *
 	 * @return string
 	 */
@@ -192,7 +192,7 @@ class Hide_Show_Password {
 	/**
 	 * Add settings action link to the plugins page.
 	 *
-	 * @since  1.0.5
+	 * @since  1.0.4
 	 */
 	public function add_action_links( $links ) {
 		return array_merge(
