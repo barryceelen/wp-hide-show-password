@@ -88,7 +88,7 @@ class Hide_Show_Password {
 	 * @since 2.0.0
 	 */
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'hide-show-password', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'hideshowpassword', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	/**
@@ -140,7 +140,7 @@ class Hide_Show_Password {
 			'hideShowPasswordVars',
 			array(
 				'innerToggle' => $this->options['inner_toggle'],
-				'checkboxLabel' => __( 'Show Password', 'hide-show-password' )
+				'checkboxLabel' => __( 'Show Password', 'hideshowpassword' )
 			)
 		);
 	}
@@ -159,13 +159,13 @@ class Hide_Show_Password {
 		);
 		add_settings_section(
 			$option_name,
-			__( 'Hide and show password', 'hide-show-password' ),
+			__( 'Hide and show password', 'hideshowpassword' ),
 			'__return_false',
 			'general'
 		);
 		add_settings_field(
 			'inner_toggle',
-			__( 'Toggle password via', 'hide-show-password' ),
+			__( 'Toggle password via', 'hideshowpassword' ),
 			array( $this, 'settings_radios' ),
 			'general',
 			$option_name
@@ -191,8 +191,8 @@ class Hide_Show_Password {
 	 */
 	public function settings_radios() {
 		$r = array(
-			array( '1', __( 'Icon inside password field', 'hide-show-password' ) ),
-			array( '0', __( 'Checkbox below password field', 'hide-show-password' ) ),
+			array( '1', __( 'Icon inside password field', 'hideshowpassword' ) ),
+			array( '0', __( 'Checkbox below password field', 'hideshowpassword' ) ),
 		);
 		foreach ( $r as $v ) {
 			$html[] = sprintf( '<input name="plugin_hide_show_password[inner_toggle]" type="radio" value="%s" %s> <span>%s</span>', $v[0], checked( $v[0], $this->options['inner_toggle'], false ), $v[1] );
@@ -208,7 +208,7 @@ class Hide_Show_Password {
 	public function add_action_links( $links ) {
 		return array_merge(
 			array(
-				'settings' => '<a href="' . admin_url( 'options-general.php?#hide-show-password-settings' ) . '">' . __( 'Settings', 'hide-show-password' ) . '</a>'
+				'settings' => '<a href="' . admin_url( 'options-general.php?#hide-show-password-settings' ) . '">' . __( 'Settings', 'hideshowpassword' ) . '</a>'
 			),
 			$links
 		);
