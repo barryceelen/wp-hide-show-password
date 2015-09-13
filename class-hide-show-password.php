@@ -98,11 +98,17 @@ class Hide_Show_Password {
 	 */
 	public function enqueue_styles() {
 
-		$prefix = $this->options['inner_toggle'] ? 'inner-toggle': 'checkbox-toggle';
+		$version = str_replace( '.', '', substr( get_bloginfo( 'version' ), 0, 3 ) );
+
+		if ( $this->options['inner_toggle'] ) {
+			$suffix = ( $version >= '43' ) ? 'inner-toggle' : 'inner-toggle-genericon';
+		} else {
+			$suffix = 'checkbox-toggle';
+		}
 
 		wp_enqueue_style(
 			'hide-show-password-style',
-			plugins_url( "css/public-{$prefix}.css", __FILE__ ),
+			plugins_url( "css/public-{$suffix}.css", __FILE__ ),
 			array(),
 			self::VERSION
 		);
