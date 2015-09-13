@@ -2,7 +2,7 @@
 Contributors: barryceelen
 Tags: login, toggle, password, show password, reveal password, password visibility,  hideShowPassword, mobile, masking, unmask, touch
 Requires at least: 3.5.1
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -42,6 +42,10 @@ Fork me on [Github](https://github.com/barryceelen/wp-hide-show-password).
 3. Alternatively, toggle the password via a checkbox labeled "Show Password".
 
 == Changelog ==
+
+= 2.0.1 =
+
+* For WordPress version 4.3 and up, [Dashicons](https://developer.wordpress.org/resource/dashicons/) is used for the toggle icon.
 
 = 2.0.0 =
 
