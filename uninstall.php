@@ -9,7 +9,7 @@
  * @copyright 2013 Barry Ceelen
  */
 
-// If uninstall not called from WordPress, then exit
+// Exit if uninstall not called from WordPress.
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }

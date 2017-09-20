@@ -1,6 +1,6 @@
 <?php
 /**
- * hideShowPassword.
+ * Main plugin class
  *
  * @package   Hide_Show_Password
  * @author    Barry Ceelen <b@rryceelen.com>
@@ -46,7 +46,7 @@ class Hide_Show_Password {
 
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
-			self::$instance = new self;
+			self::$instance = new self();
 		}
 
 		return self::$instance;
@@ -74,7 +74,7 @@ class Hide_Show_Password {
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		// Register settings
+		// Register settings.
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
 
 		// Add an action link pointing to the general options page.
@@ -144,7 +144,7 @@ class Hide_Show_Password {
 			'hideShowPasswordVars',
 			array(
 				'innerToggle' => $this->options['inner_toggle'],
-				'checkboxLabel' => __( 'Show Password', 'hideshowpassword' )
+				'checkboxLabel' => __( 'Show Password', 'hideshowpassword' ),
 			)
 		);
 	}
@@ -179,7 +179,8 @@ class Hide_Show_Password {
 	/**
 	 * Validate settings on save.
 	 *
-	 * @since    2.0.0
+	 * @since 2.0.0
+	 * @param array $input Array of options.
 	 */
 	public function settings_validate( $input ) {
 		$input['inner_toggle'] = ( 0 == $input['inner_toggle'] ) ? 0 : 1;
@@ -190,31 +191,35 @@ class Hide_Show_Password {
 	 * Display radio buttons for the 'inner_toggle' option.
 	 *
 	 * @since 2.0.0
-	 *
-	 * @return string
 	 */
 	public function settings_radios() {
 		$r = array(
-			array( '1', __( 'Icon inside password field', 'hideshowpassword' ) ),
-			array( '0', __( 'Checkbox below password field', 'hideshowpassword' ) ),
+			array( 1, __( 'Icon inside password field', 'hideshowpassword' ) ),
+			array( 0, __( 'Checkbox below password field', 'hideshowpassword' ) ),
 		);
 		foreach ( $r as $v ) {
-			$html[] = sprintf( '<input name="plugin_hide_show_password[inner_toggle]" type="radio" value="%s" %s> <span>%s</span>', $v[0], checked( $v[0], $this->options['inner_toggle'], false ), $v[1] );
+			$html[] = sprintf(
+				'<input name="plugin_hide_show_password[inner_toggle]" type="radio" value="%s" %s> <span>%s</span>',
+				(int) $v[0],
+				checked( $v[0], $this->options['inner_toggle'], false ),
+				esc_html( $v[1] )
+			);
 		}
-		printf( '<fieldset id="hide-show-password-settings"><label>%s</label></fieldset>', join( '</label><br><label>', $html ) );
+		printf( '<fieldset id="hide-show-password-settings"><label>%s</label></fieldset>', join( '</label><br><label>', $html ) ); // WPCS: XSS ok.
 	}
 
 	/**
 	 * Add settings action link to the plugins page.
 	 *
 	 * @since 2.0.0
+	 * @param array $actions An array of plugin action links.
 	 */
-	public function add_action_links( $links ) {
+	public function add_action_links( $actions ) {
 		return array_merge(
 			array(
-				'settings' => '<a href="' . admin_url( 'options-general.php?#hide-show-password-settings' ) . '">' . __( 'Settings', 'hideshowpassword' ) . '</a>'
+				'settings' => '<a href="' . admin_url( 'options-general.php?#hide-show-password-settings' ) . '">' . __( 'Settings', 'hideshowpassword' ) . '</a>',
 			),
-			$links
+			$actions
 		);
 	}
 }
