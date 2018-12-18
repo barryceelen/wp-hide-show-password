@@ -73,9 +73,9 @@ class Hide_Show_Password {
 		// Load login screen style sheet and JavaScript.
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-		
-		if (class_exists( 'WooCommerce' )) {
 			// Load stylesheet and JavaScript in the frontend of account page if user is not logged in.
+
+		if ( class_exists( 'WooCommerce' ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'woo_enqueue_styles' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'woo_enqueue_scripts' ) );
 		}
@@ -159,7 +159,8 @@ class Hide_Show_Password {
 	 * Register and enqueue woocommerce login screen stylesheet.
 	 */
 	public function woo_enqueue_styles() {
-		if (is_account_page() && !is_user_logged_in()) {
+
+		if ( is_account_page() && ! is_user_logged_in() ) {
 			$this->enqueue_styles();
 			wp_enqueue_style( 'dashicons' );
 		}
@@ -169,7 +170,8 @@ class Hide_Show_Password {
 	 * Register and enqueue woocommerce login screen scripts.
 	 */
 	public function woo_enqueue_scripts() {
-		if (is_account_page() && !is_user_logged_in()) {
+
+		if ( is_account_page() && ! is_user_logged_in() ) {
 			$this->enqueue_scripts();
 		}
 	}
