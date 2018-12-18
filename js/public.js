@@ -12,7 +12,7 @@
 	'use strict';
 	$(function () {
 
-		var el = $( '#user_pass' );
+		var el = $( 'input[type="password"]' );
 		var innerToggle = ( 1 == hideShowPasswordVars.innerToggle ) ? true : false;
 		var enableTouchSupport = false;
 
