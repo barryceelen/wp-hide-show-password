@@ -73,9 +73,9 @@ class Hide_Show_Password {
 		// Load login screen style sheet and JavaScript.
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-			// Load stylesheet and JavaScript in the frontend of account page if user is not logged in.
 
 		if ( class_exists( 'WooCommerce' ) ) {
+			// Load stylesheet and JavaScript in the frontend of WooCommerce account page if user is not logged in.
 			add_action( 'wp_enqueue_scripts', array( $this, 'woo_enqueue_styles' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'woo_enqueue_scripts' ) );
 		}
