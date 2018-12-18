@@ -157,6 +157,8 @@ class Hide_Show_Password {
 	
 	/**
 	 * Register and enqueue woocommerce login screen stylesheet.
+	 *
+	 * @since 2.1.0
 	 */
 	public function woo_enqueue_styles() {
 
@@ -168,6 +170,8 @@ class Hide_Show_Password {
 
 	/**
 	 * Register and enqueue woocommerce login screen scripts.
+	 *
+	 * @since 2.1.0
 	 */
 	public function woo_enqueue_scripts() {
 
