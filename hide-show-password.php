@@ -11,7 +11,7 @@
  * Plugin Name: hideShowPassword
  * Plugin URI:  https://github.com/barryceelen/wp-hide-show-password
  * Description: Toggle password visibility on the WordPress login screen.
- * Version:     2.0.1
+ * Version:     2.1.0
  * Author:      Barry Ceelen
  * Author URI:  https://github.com/barryceelen
  * Text Domain: hideshowpassword
