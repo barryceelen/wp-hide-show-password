@@ -25,5 +25,5 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-require_once( plugin_dir_path( __FILE__ ) . 'class-hide-show-password.php' );
+require_once plugin_dir_path( __FILE__ ) . 'class-hide-show-password.php';
 add_action( 'plugins_loaded', array( 'Hide_Show_Password', 'get_instance' ) );

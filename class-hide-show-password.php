@@ -45,7 +45,7 @@ class Hide_Show_Password {
 	public static function get_instance() {
 
 		// If the single instance hasn't been set, set it now.
-		if ( null == self::$instance ) {
+		if ( null === self::$instance ) {
 			self::$instance = new self();
 		}
 
@@ -149,12 +149,12 @@ class Hide_Show_Password {
 			'hide-show-password-script',
 			'hideShowPasswordVars',
 			array(
-				'innerToggle' => $this->options['inner_toggle'],
+				'innerToggle'   => $this->options['inner_toggle'],
 				'checkboxLabel' => __( 'Show Password', 'hideshowpassword' ),
 			)
 		);
 	}
-	
+
 	/**
 	 * Register and enqueue woocommerce login screen stylesheet.
 	 *
@@ -214,7 +214,7 @@ class Hide_Show_Password {
 	 * @param array $input Array of options.
 	 */
 	public function settings_validate( $input ) {
-		$input['inner_toggle'] = ( 0 == $input['inner_toggle'] ) ? 0 : 1;
+		$input['inner_toggle'] = ( 0 === (int) $input['inner_toggle'] ) ? 0 : 1;
 		return $input;
 	}
 
