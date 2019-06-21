@@ -15,17 +15,6 @@ Lets you easily show or hide the contents of the password field on the WordPress
 
 **Suggested reading:** ["a compendium of why and how to show passwords and what’s coming next"](http://www.lukew.com/ff/entry.asp?1941) by Luke Wroblewski.
 
-= Options =
-
-A settings section is added to the 'General Settings' page. You can select between toggling password visibility via an icon in the password field (default) or via a checkbox below the password field.
-
-= Translations =
-
-The default setting of toggling the password via an icon in the password field does not require translation as no text will be visible to the user. If you select the option of toggling the password via a checkbox, the following translations are included:
-
-* Dutch
-* German
-
 = Github =
 
 Fork me on [Github](https://github.com/barryceelen/wp-hide-show-password).
@@ -39,7 +28,6 @@ Fork me on [Github](https://github.com/barryceelen/wp-hide-show-password).
 
 1. Adds an icon to the password field on the login screen.
 2. Show your password by clicking the icon.
-3. Alternatively, toggle the password via a checkbox labeled "Show Password".
 
 == Changelog ==
 
@@ -47,6 +35,7 @@ Fork me on [Github](https://github.com/barryceelen/wp-hide-show-password).
 
 * Do not show toggle on reset password screen
 * Add WooCommerce login form support. Props @manuelpette
+* Deprecate the checkbox toggle field option
 
 = 2.0.1 =
 
