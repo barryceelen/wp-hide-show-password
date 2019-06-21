@@ -13,6 +13,11 @@
 	$(function () {
 
 		var el = $( 'input[type="password"]' );
+
+		if ( ! el.length || el.is( '#pass1' ) ) {
+			return;
+		}
+
 		var innerToggle = ( 1 == hideShowPasswordVars.innerToggle ) ? true : false;
 		var enableTouchSupport = false;
 
