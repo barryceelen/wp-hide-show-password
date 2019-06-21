@@ -43,6 +43,11 @@ Fork me on [Github](https://github.com/barryceelen/wp-hide-show-password).
 
 == Changelog ==
 
+= 2.1.0 =
+
+* Do not show toggle on reset password screen
+* Add WooCommerce login form support. Props @manuelpette
+
 = 2.0.1 =
 
 * For WordPress version 4.3 and up, [Dashicons](https://developer.wordpress.org/resource/dashicons/) is used for the toggle icon.
