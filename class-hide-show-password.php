@@ -236,7 +236,7 @@ class Hide_Show_Password {
 				esc_html( $v[1] )
 			);
 		}
-		printf( '<fieldset id="hide-show-password-settings"><label>%s</label></fieldset>', join( '</label><br><label>', $html ) ); // WPCS: XSS ok.
+		printf( '<fieldset id="hide-show-password-settings"><label>%s</label></fieldset>', join( '</label><br><label>', $html ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
