@@ -18,7 +18,7 @@
 			return;
 		}
 
-		var innerToggle = ( 1 == hideShowPasswordVars.innerToggle ) ? true : false;
+		var innerToggle = ( 1 === parseInt( hideShowPasswordVars.innerToggle, 10 ) ) ? true : false;
 		var enableTouchSupport = false;
 
 		if ( ( 'ontouchstart' in window ) || window.DocumentTouch && document instanceof DocumentTouch ) {
@@ -31,7 +31,7 @@
 			}
 		});
 
-		if ( false == innerToggle ) {
+		if ( false === innerToggle ) {
 
 			var checkbox = $( '<label class="hideShowPassword-checkbox"><input type="checkbox" /> ' + hideShowPasswordVars.checkboxLabel + '</label>' ).insertAfter( el.parent( 'label' ) );
 
