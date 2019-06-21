@@ -180,21 +180,31 @@ class Hide_Show_Password {
 	/**
 	 * Add a settings section to the 'General Settings' page.
 	 *
-	 * @since    2.0.0
+	 * @since 2.0.0
+	 * @since 2.1.0 Deprecated the checkbox toggle for users that not already have it set.
 	 */
 	public function register_settings() {
+
 		$option_name = 'plugin_hide_show_password';
+		$option      = get_option( $option_name );
+
+		if ( empty( $option ) || ! isset( $option['inner_toggle'] ) ) {
+			return;
+		}
+
 		register_setting(
 			'general',
 			$option_name,
 			array( $this, 'settings_validate' )
 		);
+
 		add_settings_section(
 			$option_name,
 			__( 'Hide and show password', 'hideshowpassword' ),
 			'__return_false',
 			'general'
 		);
+
 		add_settings_field(
 			'inner_toggle',
 			__( 'Toggle password via', 'hideshowpassword' ),
