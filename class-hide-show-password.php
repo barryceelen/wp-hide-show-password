@@ -74,11 +74,9 @@ class Hide_Show_Password {
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		if ( class_exists( 'WooCommerce' ) ) {
-			// Load stylesheet and JavaScript in the frontend of WooCommerce account page if user is not logged in.
-			add_action( 'wp_enqueue_scripts', array( $this, 'woo_enqueue_styles' ) );
-			add_action( 'wp_enqueue_scripts', array( $this, 'woo_enqueue_scripts' ) );
-		}
+		// Load stylesheet and JavaScript in the frontend of WooCommerce account page if user is not logged in.
+		add_action( 'wp_enqueue_scripts', array( $this, 'woo_enqueue_styles' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'woo_enqueue_scripts' ) );
 
 		// Register settings.
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
@@ -115,7 +113,7 @@ class Hide_Show_Password {
 		wp_enqueue_style(
 			'hide-show-password-style',
 			plugins_url( "css/public-{$suffix}.css", __FILE__ ),
-			array(),
+			array( 'dashicons' ),
 			self::VERSION
 		);
 	}
@@ -162,9 +160,8 @@ class Hide_Show_Password {
 	 */
 	public function woo_enqueue_styles() {
 
-		if ( is_account_page() && ! is_user_logged_in() ) {
+		if ( class_exists( 'WooCommerce' ) && is_account_page() && ! is_user_logged_in() ) {
 			$this->enqueue_styles();
-			wp_enqueue_style( 'dashicons' );
 		}
 	}
 
@@ -175,7 +172,7 @@ class Hide_Show_Password {
 	 */
 	public function woo_enqueue_scripts() {
 
-		if ( is_account_page() && ! is_user_logged_in() ) {
+		if ( class_exists( 'WooCommerce' ) && is_account_page() && ! is_user_logged_in() ) {
 			$this->enqueue_scripts();
 		}
 	}
