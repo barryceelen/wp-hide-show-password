@@ -3,7 +3,11 @@ hideShowPassword for WordPress
 
 [![Build Status](https://travis-ci.org/barryceelen/wp-hide-show-password.svg?branch=master)](https://travis-ci.org/barryceelen/wp-hide-show-password)
 
-Lets you easily show or hide the contents of the password field on the WordPress login screen.
+**Discontinued:** This plugin is no longer under active development: ❤️ WordPress core supports a similar [password visibility toggle button on the login screen](https://make.wordpress.org/core/2019/10/10/wordpress-5-3-adds-a-show-button-next-to-the-password-field-on-the-login-screen/) by default since version 5.3.
+
+-
+
+The hideShowPassword for WordPress plugin lets you easily show or hide the contents of the password field on the WordPress login screen.
 Uses the excellent [hideShowPassword](https://github.com/cloudfour/hideShowPassword) jQuery plugin by the equally excellent [Cloud Four](https://github.com/cloudfour/).
 
 **Suggested reading:**
