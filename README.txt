@@ -1,5 +1,5 @@
 === hideShowPassword ===
-Contributors: barryceelen
+Contributors: barryceelen, manuelpette
 Tags: login, toggle, password, show password, reveal password, password visibility,  hideShowPassword, mobile, masking, unmask, touch
 Requires at least: 3.5.1
 Tested up to: 5.3
